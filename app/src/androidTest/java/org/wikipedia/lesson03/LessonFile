@@ -1,0 +1,9 @@
+androidx.appcompat.widget.AppCompatImageView
+id	@id/imageViewCentered
+
+org.wikipedia.views.AppTextView
+id	@id/primaryTextView
+
+name="onboarding_welcome_title_v2"
+text	The Free Encyclopedia
+…in over 300 languages
