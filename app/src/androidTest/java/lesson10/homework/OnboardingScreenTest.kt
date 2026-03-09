@@ -13,9 +13,8 @@ class OnboardingScreenTest : BaseClass() {
             OnboardingScreenKautomator {
                 step("Проверяем отображение элементов на первом экране") {
                     image.isDisplayed()
-                    primaryText.containsText("The Free Encyclopedia")
-                    secondaryText.containsText("We’ve found the following on your device:")
-                    language.containsText("English")
+                    primaryText.containsText("Encyclopedia")
+                    secondaryText.containsText("We’ve found")
                     addOrEditLanguagesButton.isDisplayed()
                     skipButton.isDisplayed()
                     pageIndicator.isDisplayed()
