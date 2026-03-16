@@ -51,6 +51,7 @@ class OnboardingScreenTest : BaseClass() {
             }
             step("Возвращение с экрана добавления языков по кнопке назад") {
                 AddLanguagesScreenKautomator.backButton.click()
+
             }
         }
     }

@@ -20,7 +20,7 @@ object OnboardingScreenKautomator : UiScreen<OnboardingScreenKautomator>() {
     }
 
     val addOrEditLanguagesButton = UiButton {
-        withId(this@OnboardingScreenKautomator.packageName, "addOrEditLanguages")
+        withId(this@OnboardingScreenKautomator.packageName, "addLanguageButton")
     }
 
     val primaryText = UiTextView {
