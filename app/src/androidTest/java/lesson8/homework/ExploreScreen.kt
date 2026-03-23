@@ -20,6 +20,10 @@ object ExploreScreen : KScreen<ExploreScreen>() {
         withId(R.id.main_toolbar_wordmark)
     }
 
+    val closeButton = KImageView {
+        withId(R.id.closeButton)
+    }
+
     val items = KRecyclerView(
 
         builder = {
