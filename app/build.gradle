@@ -288,6 +288,8 @@ dependencies {
     androidTestImplementation(composeBom)
     debugImplementation(libs.compose.debug.test)
     debugImplementation(composeBom)
+
+    androidTestImplementation("com.kaspersky.android-components:kaspresso-allure-support:1.6.0")
 }
 
 private setSigningConfigKey(config, Properties props) {
