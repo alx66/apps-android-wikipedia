@@ -7,6 +7,7 @@ import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.tabs.KTabLayout
 import lesson8.homework.AnnouncementCard
 import lesson8.homework.DataItem
 import lesson8.homework.FeaturedArticle
@@ -21,6 +22,8 @@ import lesson18.name
 import io.github.kakaocup.kakao.text.KButton
 import lesson18.OnboardingScreen.withParent
 import lesson18.invokeWithText
+import lesson21.extension.invokeAtIndexAndClass
+import org.wikipedia.feed.featured.FeaturedArticleCardView
 
 object ExploreScreen : KScreen<ExploreScreen>() {
 
@@ -65,5 +68,19 @@ object ExploreScreen : KScreen<ExploreScreen>() {
 
     fun topReadBlock(fnc: TopReadItem.() -> Unit) {
         items.invokeWithText("Top read", fnc)
+    }
+    val moreTab = KTabLayout {
+        withId(R.id.nav_tab_more)
+    }.name(withParent("Таб More"))
+
+    fun featuredArticle(index: Int, fnc: FeaturedArticle.() -> Unit) {
+        items.invokeAtIndexAndClass(
+            index,
+            1,
+            (index - 1) * 10,
+            FeaturedArticleCardView::class.java,
+            "$index блок Featured article",
+            fnc
+        )
     }
 }
