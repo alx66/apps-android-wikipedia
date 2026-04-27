@@ -4,12 +4,13 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import lesson18.getName
+import lesson23.KWebViewElement
 
 class Verify(private val steps: StepDefinitions) : StepsDsl<Verify>() {
 
     override val self = this
 
-    fun isDisplayed(element: BaseAssertions) {
+    fun isDisplayed(element: KWebViewElement) {
         steps.isDisplayed(
             "Проверяет, что отображается '${(element as BaseActions).getName()}'",
             element

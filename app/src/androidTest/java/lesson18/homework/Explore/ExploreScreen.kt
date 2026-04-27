@@ -3,6 +3,7 @@ package lesson18.homework.Explore
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
+import com.google.android.material.textview.MaterialTextView
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
@@ -20,10 +21,12 @@ import lesson18.NamedScreen
 import lesson18.withParent
 import lesson18.name
 import io.github.kakaocup.kakao.text.KButton
+import io.github.kakaocup.kakao.text.KTextView
 import lesson18.OnboardingScreen.withParent
 import lesson18.invokeWithText
 import lesson21.extension.invokeAtIndexAndClass
 import org.wikipedia.feed.featured.FeaturedArticleCardView
+import lesson22.SearchWidget
 
 object ExploreScreen : KScreen<ExploreScreen>() {
 
@@ -69,6 +72,7 @@ object ExploreScreen : KScreen<ExploreScreen>() {
     fun topReadBlock(fnc: TopReadItem.() -> Unit) {
         items.invokeWithText("Top read", fnc)
     }
+
     val moreTab = KTabLayout {
         withId(R.id.nav_tab_more)
     }.name(withParent("Таб More"))
@@ -82,5 +86,16 @@ object ExploreScreen : KScreen<ExploreScreen>() {
             "$index блок Featured article",
             fnc
         )
+    }
+
+    val searchField = KTextView() {
+        isInstanceOf(MaterialTextView::class.java)
+        withText("Search Wikipedia")
+    }
+
+    val searchWidget by lazy {
+        SearchWidget {
+            withId(R.id.search_container)
+        }.name(withParent("Виджет поиска"))
     }
 }

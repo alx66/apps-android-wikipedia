@@ -2,13 +2,10 @@ package lesson19.homework
 
 import org.junit.Test
 import lesson18.OnboardingScreen
-import lesson18.homework.Explore.CustomizeScreen
-import lesson18.homework.Explore.CustomizeScreen.items
 import lesson18.homework.Explore.ExploreScreen
 import lesson19.action
 import lesson19.verify
 import lesson9.homework.BaseClass
-import lesson18.homework.Explore.TopRead
 import
 
 class ExploreTests : BaseClass() {
